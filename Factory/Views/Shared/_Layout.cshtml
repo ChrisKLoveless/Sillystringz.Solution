@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="https://img.icons8.com/neon/2x/experimental-barber-pole-neon.png">
+  <link rel="icon" href="https://img.icons8.com/color/512/gears.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300&display=swap"
@@ -15,6 +15,19 @@
 </head>
 
 <body>
+  <div id="nav">
+    <div class="row">
+      <div class="col-4">
+        <p>@Html.ActionLink("Back Home", "Index", "Home")</p>
+      </div>
+      <div class="col-4">
+        <p>@Html.ActionLink("Manage Engineers", "Index", "Engineers")</p>
+      </div>
+      <div class="col-4">
+        <p>@Html.ActionLink("Manage Machines", "Index", "Machines")</p>
+      </div>
+    </div>
+  </div>
   @RenderBody()
 
   @await Html.PartialAsync("Footer")

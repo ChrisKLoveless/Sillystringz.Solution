@@ -4,9 +4,11 @@
 
 @using Factory.Models;
 
-<h1 class="jumbotron">Welcome to Dr.Sillystringz's Factory</h1>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/256/gears.png">Welcome to Dr.Sillystringz's Factory</h1>
 
 <hr>
+
+<div id="home-list">
 
 <h4><u>List of Engineers</u></h4>
 @if (Model["Engineers"].Length == 0)
@@ -20,6 +22,8 @@
     }
 </ul>
 
+<hr>
+
 <h4><u>List of Machines</u></h4>
 @if (Model["Machines"].Length == 0)
 {
@@ -31,5 +35,6 @@
         <li id="machine">@Html.ActionLink(@machine.Name, "Details", "Machines", new { id = @machine.MachineId})</li>
     }
 </ul>
+</div>
 
 <hr>

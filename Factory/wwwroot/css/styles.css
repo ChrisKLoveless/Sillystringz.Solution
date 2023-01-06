@@ -1,12 +1,68 @@
+a {
+  color: rgb(204, 204, 22);
+  padding: 5px;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.727), rgba(0, 0, 0, 0.727)), url("https://www.wdgconsulting.com/wp-content/uploads/2019/03/Machines.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+}
+
+div.col-4 {
+  text-align: center;
+}
+
 div#footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
   color: #CCC;
-  background: #333;
+  background: rgb(47, 128, 221);
   padding: 10px;
   margin: auto;
+}
+
+div#home-list {
+  text-align: center;
+}
+
+div#nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  color: #CCC;
+  background: rgb(47, 128, 221);
+  padding: 5px;
+  margin: auto;
+}
+
+h1#welcome-header {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.jumbotron {
+  text-align: center;
+  height: 250px;
+  background-color: #333;
+}
+
+li#engineer {
+  list-style-position: inside;
+  padding: 10px;
+  list-style-image: url(https://img.icons8.com/external-nawicon-flat-nawicon/48/external-engineer-labour-day-nawicon-flat-nawicon.png);
+}
+
+li#machine {
+  list-style-position: inside;
+  padding: 10px;
+  list-style-image: url(https://img.icons8.com/avantgarde/48/robot.png);
 }
 
 p#foot {
@@ -14,3 +70,5 @@ p#foot {
   margin-right: 20px;
   margin-left: 20px;
 }
+
+
