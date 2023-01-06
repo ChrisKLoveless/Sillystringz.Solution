@@ -5,28 +5,32 @@
 @using Factory.Models;
 
 <div class="container">
-	<h1 class="jumbotron">List of Engineers</h1>
+	<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Engineers</h1>
 
-	@if (@Model.Count == 0)
-	{
-		<h3>No Engineers have been added yet!</h3>
-	}
-	else
-	{
-		List<Engineer> engineerList = new List<Engineer>();
-		@foreach (Engineer engineer in Model)
+	<hr>
+	<div class="form">
+		@if (@Model.Count == 0)
 		{
-			engineerList.Add(engineer);
+			<h3>No Engineers have been added yet!</h3>
 		}
-		List<Engineer> SortedList = engineerList.OrderBy(engineer => engineer.DateHired).ToList();
-		<ul class="row">
-			@foreach (Engineer e in SortedList)
+		else
+		{
+			List<Engineer> engineerList = new List<Engineer>();
+			@foreach (Engineer engineer in Model)
 			{
-			<li id="engineer">@Html.ActionLink($"{e.Name}", "Details", new { id = e.EngineerId }) | Date Hired:
-				@e.DateHired</li>
+				engineerList.Add(engineer);
 			}
-		</ul>
-	}
-
-	<p id="link">@Html.ActionLink("Add new Enginnner", "Create")</p>
+			List<Engineer> SortedList = engineerList.OrderBy(engineer => engineer.DateHired).ToList();
+			<ul class="row">
+				@foreach (Engineer e in SortedList)
+				{
+					<li id="engineer">@Html.ActionLink($"{e.Name}", "Details", new { id = e.EngineerId }) | <strong>Date
+							Hired:</strong>
+						@e.DateHired</li>
+				}
+			</ul>
+		}
+		<hr>
+		<p id="link">@Html.ActionLink("Add new Engineer", "Create")</p>
+	</div>
 </div>

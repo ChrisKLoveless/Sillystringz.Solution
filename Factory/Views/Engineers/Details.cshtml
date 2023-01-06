@@ -1,43 +1,49 @@
 @{
-    Layout = "_Layout";
+	Layout = "_Layout";
 }
 
 @using Factory.Models;
 @model Factory.Models.Engineer;
 
-<h1 class="jumbotron">Engineer Details</h1>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Engineer Details</h1>
 
+<hr>
+
+<div class="form">
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.DateHired): @Html.DisplayFor(model => model.DateHired)</h3>
+<h3><strong>Hire Date:</strong> @Html.DisplayFor(model => model.DateHired)</h3>
+<hr>
 
-@if (@Model.JoinEntities.Count == 0)
-{
-    <p>This Enginner has no licenses yet!</p>
-}
-else
-{
-    List<EngineerMachine> machineList = new List<EngineerMachine>();
-    @foreach (EngineerMachine machine in Model.JoinEntities)
-    {
-        machineList.Add(machine);
-    }
-    List<EngineerMachine> sortedList = machineList.OrderBy(EngineerMachine => EngineerMachine.Machine.LastServiced).ToList();
+	@if (@Model.JoinEntities.Count == 0)
+	{
+		<p><em>This Engineer has no Machines to service!</em></p>
+	}
+	else
+	{
+		List<EngineerMachine> machineList = new List<EngineerMachine>();
+		@foreach (EngineerMachine machine in Model.JoinEntities)
+		{
+			machineList.Add(machine);
+		}
+		List<EngineerMachine> sortedList = machineList.OrderBy(EngineerMachine =>
+					EngineerMachine.Machine.LastServiced).ToList();
 
-    <h4>This Doctor has the following Machines:</h4>
-    <ul class="row">
-        @foreach (EngineerMachine join in sortedList)
-        {
-            <li id="patient">Machine: @join.Machine.Name | @join.Machine.LastServiced</li>
-            @using (Html.BeginForm("DeleteJoin", "Engineers"))
-            {
-                @Html.Hidden("joinId", @join.EngineerMachineId)
-                <input type="submit" value="Delete" class="btn btn-dark" />
-            }
-        }
-    </ul>
-}
-
-<p class="btn btn-dark" id="link">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p class="btn btn-dark" id="link">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p class="btn btn-dark" id="link">@Html.ActionLink("Add a Machine to this Engineer", "AddMachine", new { id = Model.EngineerId })</p>
+		<h4>This Engineer can work on the following Machines:</h4>
+		<ul class="row">
+			@foreach (EngineerMachine join in sortedList)
+			{
+				<li id="machine">Name: @join.Machine.Name <br> <strong>Date of Last Service:</strong> @join.Machine.LastServiced</li>
+				@using (Html.BeginForm("DeleteJoin", "Engineers"))
+				{
+					@Html.Hidden("joinId", @join.EngineerMachineId)
+					<input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+				}
+			}
+		</ul>
+	}
+	<hr>
+<p id="link">@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p id="link">@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+<p id="link">@Html.ActionLink("Add a Machine to this Engineer", "AddMachine", new { id = Model.EngineerId })</p>
+</div>
 

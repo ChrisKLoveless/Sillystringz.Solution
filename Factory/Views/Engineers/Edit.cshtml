@@ -5,9 +5,13 @@
 @model Factory.Models.Engineer;
 
 
-<h2>Edit</h2>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Edit Engineer</h1>
 
-<h4> Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
+<hr>
+
+<div class="form">
+
+<h4> Name: <em>@Html.DisplayFor(model => model.Name)</em></h4><br>
 
 @using (Html.BeginForm())
 {
@@ -21,7 +25,8 @@
 
     <br>
 
-    <input type="submit" value="Save" class="btn btn-dark" />
+    <input type="submit" value="Save" class="btn btn-info" />
 }
-
-<p class="btn btn-dark" id="link">@Html.ActionLink("Back to Enginner List", "Index")</p>
+<br>
+<p class="btn btn-info" id="link">@Html.ActionLink("Back to List", "Index")</p>
+</div>

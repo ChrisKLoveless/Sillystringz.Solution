@@ -4,21 +4,24 @@
 
 @model Factory.Models.Machine
 
-<h1 class="jumbotron">Edit Machine</h1>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Edit Machine</h1>
 
-<h4>Edit this Machine: @Html.DisplayFor(model => model.Name)</h4>
+<hr>
+<div class="form">
+  <h4>Name: <em>@Html.DisplayFor(model => model.Name)</em></h4><br>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-  
-  @Html.LabelFor(model => model.LastServiced)
-  @Html.EditorFor(model => model.LastServiced)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)<br>
 
-  <input type="submit" value="Save" class="btn btn-dark"/>
-}
+    @Html.LabelFor(model => model.LastServiced)
+    @Html.EditorFor(model => model.LastServiced)<br>
 
-<p class="btn btn-dark">@Html.ActionLink("Back to Machine list", "Index")</p>
+    <input type="submit" value="Save" class="btn btn-info mt-5" />
+  }
+  <br>
+  <p>@Html.ActionLink("Back to Machine list", "Index")</p>
+</div>

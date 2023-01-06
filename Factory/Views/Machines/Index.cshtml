@@ -4,28 +4,33 @@
 
 @using Factory.Models;
 
-<h1 class="jumbotron">Machines</h1>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Machines</h1>
 
-<div>
-  @if (@Model.Count == 0)
-  {
-    <h3>No Machines have been added yet!</h3>
-  }
-  else
-  {
-    List<Machine> machineOrderList = new List<Machine>();
-    @foreach (Machine machine in Model)
+<hr>
+<div class="form">
+  <div>
+    @if (@Model.Count == 0)
     {
-      machineOrderList.Add(machine);
+      <h3>No Machines have been added yet!</h3>
     }
-    List<Machine> SortedList = machineOrderList.OrderBy(machine => machine.LastServiced).ToList();
-    <ul class="row">
-      @foreach (Machine m in SortedList)
+    else
+    {
+      List<Machine> machineOrderList = new List<Machine>();
+      @foreach (Machine machine in Model)
       {
-        <li id="machine">@Html.ActionLink($"{m.Name}", "Details", new { id = m.MachineId }) | Last Serviced: @m.LastServiced
-        </li><br>
+        machineOrderList.Add(machine);
       }
-    </ul>
-  }
+      List<Machine> SortedList = machineOrderList.OrderBy(machine => machine.LastServiced).ToList();
+      <ul class="row">
+        @foreach (Machine m in SortedList)
+        {
+          <li id="machine">@Html.ActionLink($"{m.Name}", "Details", new { id = m.MachineId }) | Last Serviced:
+            @m.LastServiced
+          </li><br>
+        }
+      </ul>
+    }
+  </div>
+  <hr>
+  <p>@Html.ActionLink("Add new Machine", "Create")</p>
 </div>
-<p class="btn btn-dark">@Html.ActionLink("Create a new Machine", "Create")</p>

@@ -4,19 +4,22 @@
 @using Factory.Models;
 @model Factory.Models.Engineer;
 
-<h1 class="jumbotron">Add a Machine</h1>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Add a Machine</h1>
 
-<h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h4>
+<div class="form">
+  <h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h4>
 
-<hr>
-@using (Html.BeginForm())
-{
+  <hr>
+  @using (Html.BeginForm())
+  {
     @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.Label("Select Machine")
-    @Html.DropDownList("MachineId")<br>
+    <h4>@Html.Label("Select Machine")</h4>
+    @Html.DropDownList("MachineId")
 
-    <input type="submit" value="Save" class="btn btn-dark"/>
-}
-<br>
-<p class="btn btn-dark">@Html.ActionLink("Back to list of Engineers", "Index")</p>
+    <input type="submit" value="Save" class="btn btn-info ml-5" />
+  }
+  <br>
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+  <p>@Html.ActionLink("Add new Machine", "Create", "Machines")</p>
+</div>

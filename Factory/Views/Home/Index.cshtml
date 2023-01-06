@@ -1,5 +1,5 @@
 @{
-    Layout = "_Layout";
+	Layout = "_Layout";
 }
 
 @using Factory.Models;
@@ -8,33 +8,37 @@
 
 <hr>
 
-<div id="home-list">
+<div id="home-list" class="row">
+	<div class="col-6">
 
-<h4><u>List of Engineers</u></h4>
-@if (Model["Engineers"].Length == 0)
-{
-    <p>No Engineer's have been added yet!</p>
-}
-<ul class="row">
-    @foreach (Engineer engineer in Model["Engineers"])
-    {
-        <li id="engineer">@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId})</li>
-    }
-</ul>
+		<h4><u>List of Engineers</u></h4>
+		@if (Model["Engineers"].Length == 0)
+		{
+			<p>No Engineer's have been added yet!</p>
+		}
+		<ul class="row">
+			@foreach (Engineer engineer in Model["Engineers"])
+			{
+				<li id="engineer">@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId})
+				</li>
+			}
+		</ul>
+	</div>
+	<hr>
 
-<hr>
-
-<h4><u>List of Machines</u></h4>
-@if (Model["Machines"].Length == 0)
-{
-    <p>No Machines have been added yet!</p>
-}
-<ul class="row">
-    @foreach (Machine machine in Model["Machines"])
-    {
-        <li id="machine">@Html.ActionLink(@machine.Name, "Details", "Machines", new { id = @machine.MachineId})</li>
-    }
-</ul>
+	<div class="col-6">
+		<h4><u>List of Machines</u></h4>
+		@if (Model["Machines"].Length == 0)
+		{
+			<p>No Machines have been added yet!</p>
+		}
+		<ul class="row">
+			@foreach (Machine machine in Model["Machines"])
+			{
+				<li id="machine">@Html.ActionLink(@machine.Name, "Details", "Machines", new { id = @machine.MachineId})</li>
+			}
+		</ul>
+	</div>
 </div>
 
 <hr>

@@ -4,7 +4,7 @@
 
 @model Factory.Models.Machine
 
-<h2 class="jumbotron">Add Engineer to this Machine</h2>
+<h1 id="welcome-header"><img src="https://img.icons8.com/color/128/gears.png">Add Engineer to this Machine</h1>
 
 <hr>
 
@@ -19,7 +19,7 @@
     @Html.Label("Select Engineer")
     @Html.DropDownList("EngineerId")<br>
 
-    <input type="submit" value="Save" class="btn btn-dark"/>
+    <input type="submit" value="Save" class="btn btn-info ml-5"/>
 }
 
 <p class="btn btn-dark">@Html.ActionLink("Back to list of Machines", "Index")</p>
