@@ -1,4 +1,6 @@
 bin/
 obj/
-# appsettings.json
+.config
+.vscode
+appsettings.json
 
