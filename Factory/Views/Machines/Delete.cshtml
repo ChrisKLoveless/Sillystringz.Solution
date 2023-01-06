@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2 class="jumbotron">Are you sure you want to delete this Machine?</h2>
+
+<hr>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@Html.DisplayNameFor(model => model.LastServiced): @Html.DisplayFor(model => model.LastServiced)
+
+<hr>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" class="btn btn-danger"/>
+}

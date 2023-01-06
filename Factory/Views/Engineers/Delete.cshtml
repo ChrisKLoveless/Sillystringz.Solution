@@ -4,13 +4,17 @@
 
 @model Factory.Models.Engineer
 
-<h2>Are you sure you want to delete this Engineer?</h2>
+<h2 class="jumbotron">Are you sure you want to delete this Engineer?</h2>
+
+<hr>
 
 @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
 @Html.DisplayNameFor(model => model.DateHired): @Html.DisplayFor(model => model.DateHired)
 
+<hr>
+
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" class="btn btn-dark" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
 }
 <p class="btn btn-dark">@Html.ActionLink("Back to List", "Index")</p>

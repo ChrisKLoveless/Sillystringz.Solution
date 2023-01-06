@@ -8,3 +8,9 @@ div#footer {
   padding: 10px;
   margin: auto;
 }
+
+p#foot {
+  padding: 5px;
+  margin-right: 20px;
+  margin-left: 20px;
+}

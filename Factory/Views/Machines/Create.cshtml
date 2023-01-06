@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1 class="jumbotron">Add new Machine</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)<br>
+
+    @Html.LabelFor(model => model.LastServiced)
+    @Html.EditorFor(model => model.LastServiced)<br>
+
+    <input type="submit" value="Create New Machine" class="btn btn-dark"/>
+}
+<br>
+<p class="btn btn-dark">@Html.ActionLink("Back to List", "Index")</p>
