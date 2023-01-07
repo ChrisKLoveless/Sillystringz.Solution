@@ -21,6 +21,7 @@ Machine can be serviced by many Engineers, and an Engineer can service many Mach
 ## Setup/Installation Requirements
 
 * Install MySQL Community Server and MySQL Workbench. Follow the instructions _[here](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql/)_.
+* Install .Net tool globally ```$ dotnet tool install --global dotnet-ef --version 6.0.0```
 * Clone down the git repo ```https://github.com/ChrisKLoveless/Sillystringz.Solution.git``` to the ```Desktop``` directory
 * Open the project with VSCode or a different source code editor.
 * Restore required packages: change directory to ```Factory``` and restore with ```$ dotnet restore```
