@@ -13,11 +13,10 @@
 
   @if (@ViewBag.Engineers.Count == 0)
   {
-    <h3><em>There are no Engineers. Add an engineer before creating a machine.</em></h3><br>
+    <h3><em>WARNING: There are no Engineers in the system.</em></h3><br>
     <p id="link">@Html.ActionLink("Add new Engineer", "Create", "Engineers")</p>
   }
-  else
-  {
+  
     @using (Html.BeginForm())
     {
       @Html.LabelFor(model => model.Name)
@@ -28,7 +27,6 @@
 
       <input type="submit" value="Create New Machine" class="btn btn-info mt-5" />
     }
-  }
   <br>
   <p>@Html.ActionLink("Back to List", "Index")</p>
 </div>

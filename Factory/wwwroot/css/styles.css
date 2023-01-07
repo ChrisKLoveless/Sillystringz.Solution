@@ -1,6 +1,7 @@
 a {
   color: rgb(125, 70, 214);
   padding: 5px;
+  font-weight: bold;
 }
 
 body {
@@ -9,6 +10,8 @@ body {
   background-size: cover;
   background-position: center center;
   color: white;
+  font-family: 'Abel', sans-serif;
+  font-size: large;
 }
 
 div.col-4 {

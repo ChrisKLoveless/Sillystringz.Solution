@@ -24,7 +24,7 @@
       <ul class="row">
         @foreach (Machine m in SortedList)
         {
-          <li id="machine">@Html.ActionLink($"{m.Name}", "Details", new { id = m.MachineId }) | Last Serviced:
+          <li id="machine">@Html.ActionLink($"{m.Name}", "Details", new { id = m.MachineId }) | <strong>Last Serviced:</strong> 
             @m.LastServiced
           </li><br>
         }
