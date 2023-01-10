@@ -11,11 +11,11 @@
   <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })
   </p>
 
-  @if (@ViewBag.Engineers.Count == 0)
+  @* @if (@ViewBag.Engineers.Count == 0)
   {
     <h3><em>WARNING: There are no Engineers in the system.</em></h3><br>
     <p id="link">@Html.ActionLink("Add new Engineer", "Create", "Engineers")</p>
-  }
+  } *@
   
     @using (Html.BeginForm())
     {
